@@ -1,0 +1,558 @@
+/* ==============================
+   CINEMATIC INTRO — Ring Animation
+   ============================== */
+
+/* ===== OVERLAY ===== */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a0a12;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+    overflow: hidden;
+}
+
+.intro-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* ===== STARS ===== */
+.intro-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.intro-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle var(--dur) ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.1; transform: scale(0.8); }
+    100% { opacity: var(--max-op); transform: scale(1.2); }
+}
+
+/* ===== STORY SCREENS ===== */
+.story-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.story-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== STORY TEXT ===== */
+.story-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    line-height: 1.8;
+    max-width: 600px;
+    animation: storyFadeIn 1.5s ease forwards;
+}
+
+.story-text-small {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(232, 160, 191, 0.8);
+    text-align: center;
+    margin-top: 15px;
+    letter-spacing: 2px;
+    animation: storyFadeIn 1.5s ease 0.5s both;
+}
+
+.story-name {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 5rem !important;
+    font-style: normal !important;
+    color: #e8a0bf !important;
+    text-shadow: 0 0 60px rgba(232, 160, 191, 0.5);
+    animation: nameGlow 2s ease infinite alternate;
+}
+
+@keyframes nameGlow {
+    0% { text-shadow: 0 0 30px rgba(232, 160, 191, 0.3); }
+    100% { text-shadow: 0 0 80px rgba(232, 160, 191, 0.7), 0 0 120px rgba(194, 24, 91, 0.3); }
+}
+
+.story-enter-heart {
+    font-size: 3rem;
+    margin-top: 30px;
+    animation: heartbeat 1.5s ease-in-out infinite, storyFadeIn 1s ease 1s both;
+}
+
+/* Date reveal animation */
+.story-date-reveal {
+    text-align: center;
+}
+
+.story-big-date {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #e8a0bf;
+    margin: 15px 0;
+    text-shadow: 0 0 50px rgba(232, 160, 191, 0.6);
+    animation: dateReveal 2s ease forwards;
+}
+
+@keyframes dateReveal {
+    0% { 
+        opacity: 0; 
+        transform: scale(0.5); 
+        letter-spacing: 20px; 
+        filter: blur(10px);
+    }
+    50% {
+        letter-spacing: 5px;
+        filter: blur(0);
+    }
+    100% { 
+        opacity: 1; 
+        transform: scale(1); 
+        letter-spacing: 0; 
+    }
+}
+
+/* Counter preview in intro */
+.story-counter-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.story-mini-counter {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ff6b9d;
+    display: block;
+    text-shadow: 0 0 40px rgba(255, 107, 157, 0.5);
+    animation: counterPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes counterPop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes storyFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== FIRST SCREEN PULSE ===== */
+.story-whisper {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: whisperPulse 2s ease-in-out infinite;
+}
+
+.story-pulse {
+    font-size: 2rem;
+    color: rgba(232, 160, 191, 0.5);
+    margin-top: 20px;
+    animation: pulseStar 2s ease-in-out infinite;
+}
+
+@keyframes whisperPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes pulseStar {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+    50% { transform: scale(1.3) rotate(180deg); opacity: 0.8; }
+}
+
+/* ===== RING BOX ===== */
+.ring-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring-box {
+    position: relative;
+    width: 180px;
+    height: 200px;
+    perspective: 800px;
+    transform-style: preserve-3d;
+}
+
+/* Base */
+.ring-box-base {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+}
+
+.base-front {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(180deg, #3d1a2e 0%, #2a1020 100%);
+    border-radius: 10px 10px 15px 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.ring-box-inside {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    height: 100px;
+    background: linear-gradient(180deg, #1a0a15 0%, #2a1020 100%);
+    border-radius: 8px 8px 0 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+/* Cushion */
+.ring-cushion {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60px;
+    background: radial-gradient(ellipse, #4a2040 0%, #3a1530 100%);
+    border-radius: 50% 50% 45% 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Lid */
+.ring-box-lid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    transform-origin: top center;
+    transition: transform 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 5;
+}
+
+.ring-box-lid.open {
+    transform: rotateX(-130deg);
+}
+
+.lid-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(180deg, #5a2a45 0%, #4a2038 100%);
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
+}
+
+.lid-front {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, #4a2038 0%, #3d1a2e 100%);
+    border-radius: 0 0 10px 10px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.lid-front::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 12px;
+    background: linear-gradient(135deg, #d4a574, #c49660);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(212, 165, 116, 0.3);
+}
+
+/* ===== THE RING ===== */
+.ring {
+    position: relative;
+    width: 50px;
+    height: 55px;
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+    transition: opacity 1s ease 0.8s, transform 1s ease 0.8s;
+}
+
+.ring.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.ring-band {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 45px;
+    border: 4px solid transparent;
+    border-image: linear-gradient(180deg, #f5e6d3, #d4a574, #c49660, #d4a574) 1;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(212, 165, 116, 0.4), inset 0 0 10px rgba(212, 165, 116, 0.2);
+}
+
+.ring-band::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(245,230,211,0.3), transparent 40%) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+/* Diamond */
+.ring-diamond {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.diamond-shape {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+}
+
+.diamond-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: diamondPulse 2s ease-in-out infinite;
+}
+
+@keyframes diamondPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.5); opacity: 1; }
+}
+
+/* Diamond Sparkles */
+.diamond-sparkle {
+    position: absolute;
+    color: white;
+    font-size: 0.8rem;
+    opacity: 0;
+    animation: sparkleFloat 2s ease-in-out infinite;
+}
+
+.diamond-sparkle.s1 {
+    top: -15px;
+    left: -10px;
+    animation-delay: 0s;
+}
+
+.diamond-sparkle.s2 {
+    top: -8px;
+    right: -15px;
+    animation-delay: 0.5s;
+}
+
+.diamond-sparkle.s3 {
+    top: 5px;
+    left: -18px;
+    animation-delay: 1s;
+    font-size: 0.6rem;
+}
+
+.diamond-sparkle.s4 {
+    top: -20px;
+    right: -5px;
+    animation-delay: 1.5s;
+    font-size: 0.6rem;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
+    50% { opacity: 1; transform: translateY(-5px) scale(1); }
+}
+
+/* ===== RING TEXT ===== */
+.ring-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: #e8a0bf;
+    margin-top: 40px;
+    text-align: center;
+    min-height: 40px;
+    text-shadow: 0 0 30px rgba(232, 160, 191, 0.5);
+}
+
+.ring-text .typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.8rem;
+    background: #e8a0bf;
+    margin-left: 3px;
+    vertical-align: middle;
+    animation: cursorBlink 0.8s step-end infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ===== SKIP BUTTON ===== */
+.intro-skip {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: none;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.intro-skip:hover {
+    color: rgba(255,255,255,0.7);
+    border-color: rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.05);
+}
+
+/* ===== PROGRESS DOTS ===== */
+.intro-progress {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.progress-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    transition: all 0.5s ease;
+}
+
+.progress-dot.active {
+    background: #e8a0bf;
+    box-shadow: 0 0 10px rgba(232, 160, 191, 0.5);
+    transform: scale(1.2);
+}
+
+.progress-dot.passed {
+    background: rgba(232, 160, 191, 0.4);
+}
+
+/* ===== MAIN WEBSITE HIDDEN STATE ===== */
+.main-website {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.main-website.visible {
+    opacity: 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .story-text {
+        font-size: 1.4rem;
+    }
+
+    .story-name {
+        font-size: 3.5rem !important;
+    }
+
+    .ring-box {
+        width: 140px;
+        height: 160px;
+    }
+
+    .ring-text {
+        font-size: 1.4rem;
+    }
+
+    .intro-skip {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-text {
+        font-size: 1.2rem;
+    }
+
+    .story-name {
+        font-size: 2.8rem !important;
+    }
+
+    .ring-box {
+        width: 120px;
+        height: 140px;
+    }
+}
