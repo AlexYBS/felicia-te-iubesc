@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentru Felicia ❤️</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>">
+    <meta name="theme-color" content="#c2185b">
+    <meta name="description" content="Un website de dragoste pentru Felicia — povestea noastră de iubire">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="intro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ====== PRELOADER ====== -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-heart">
+            <span>❤️</span>
+        </div>
+        <p class="preloader-text">Se încarcă povestea noastră...</p>
+    </div>
+
+    <!-- ====== CINEMATIC INTRO ====== -->
+    <div class="intro-overlay" id="intro-overlay">
+        
+        <!-- Stars background -->
+        <div class="intro-stars" id="intro-stars"></div>
+
+        <!-- Story screens -->
+        <div class="story-screen active" id="story-0">
+            <p class="story-whisper">apasă oriunde pentru a începe</p>
+            <div class="story-pulse">✦</div>
+        </div>
+
+        <div class="story-screen" id="story-1">
+            <p class="story-text">Există o poveste...</p>
+            <p class="story-text-small">o poveste despre doi oameni și o dragoste mai mare decât ei</p>
+        </div>
+
+        <div class="story-screen" id="story-2">
+            <p class="story-text">Într-o zi, un băiat a întâlnit<br>o fată cu ochii care străluceau<br>mai tare decât stelele.</p>
+        </div>
+
+        <div class="story-screen" id="story-3">
+            <p class="story-text">Ea i-a schimbat lumea.</p>
+            <p class="story-text-small">Fără să știe, ea a devenit tot ce contează.</p>
+        </div>
+
+        <div class="story-screen" id="story-4">
+            <div class="story-date-reveal">
+                <p class="story-text-small">Și pe</p>
+                <p class="story-big-date">19 Noiembrie 2025</p>
+                <p class="story-text-small">ea a devenit a lui. Pentru totdeauna.</p>
+            </div>
+        </div>
+
+        <div class="story-screen" id="story-5">
+            <p class="story-text">De atunci, fiecare zi a fost<br>cel mai frumos cadou.</p>
+            <div class="story-counter-preview">
+                <span class="story-mini-counter" id="story-days-count"></span>
+                <p class="story-text-small">de zile de iubire</p>
+            </div>
+        </div>
+
+        <div class="story-screen" id="story-6">
+            <p class="story-text">Și într-o zi, el a decis<br>să-i arate cât de mult o iubește...</p>
+        </div>
+
+        <!-- Ring Box Scene -->
+        <div class="story-screen" id="story-7">
+            <div class="ring-scene">
+                <!-- Ring Box -->
+                <div class="ring-box" id="ring-box">
+                    <div class="ring-box-lid" id="ring-box-lid">
+                        <div class="lid-top"></div>
+                        <div class="lid-front"></div>
+                    </div>
+                    <div class="ring-box-base">
+                        <div class="ring-box-inside">
+                            <div class="ring-cushion">
+                                <div class="ring" id="ring">
+                                    <div class="ring-band"></div>
+                                    <div class="ring-diamond">
+                                        <div class="diamond-sparkle s1">✦</div>
+                                        <div class="diamond-sparkle s2">✦</div>
+                                        <div class="diamond-sparkle s3">✧</div>
+                                        <div class="diamond-sparkle s4">✦</div>
+                                        <div class="diamond-glow"></div>
+                                        <div class="diamond-shape">💎</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="base-front"></div>
+                    </div>
+                </div>
+                
+                <p class="ring-text" id="ring-text"></p>
+            </div>
+        </div>
+
+        <!-- Final story before website reveals -->
+        <div class="story-screen" id="story-8">
+            <p class="story-text story-name">Felicia</p>
+            <p class="story-text-small">asta e povestea noastră</p>
+            <div class="story-enter-heart">❤️</div>
+        </div>
+
+        <!-- Skip button -->
+        <button class="intro-skip" id="intro-skip">Sari peste ▸</button>
+        
+        <!-- Progress dots -->
+        <div class="intro-progress" id="intro-progress">
+            <span class="progress-dot active"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+            <span class="progress-dot"></span>
+        </div>
+    </div>
+
+    <!-- ====== MAIN WEBSITE (hidden until intro ends) ====== -->
+    <div class="main-website" id="main-website">
+
+    <!-- Floating Hearts Background -->
+    <div class="hearts-bg" id="hearts-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo">♥ F & A</a>
+        <div class="nav-links">
+            <a href="#hero">Acasă</a>
+            <a href="#counter">Cronometru</a>
+            <a href="#timeline">Povestea</a>
+            <a href="#gallery">Galerie</a>
+            <a href="#polaroids">Polaroid</a>
+            <a href="#video">Video</a>
+            <a href="#reasons">Te Iubesc</a>
+            <a href="#secrets">Secrete</a>
+            <a href="#poem">Poezie</a>
+            <a href="#song">Melodia</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#future">Viitorul</a>
+            <a href="#oath">Jurământ</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle">☰</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <!-- VIDEO BACKGROUND: Pune un video cu voi doi aici -->
+        <video class="hero-video" autoplay muted loop playsinline id="hero-video">
+            <!-- Adaugă video-ul: <source src="media/hero-video.mp4" type="video/mp4"> -->
+        </video>
+        <!-- SAU poză de fundal: adaugă în CSS background-image pe .hero -->
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-heart">❤️</div>
+            <h1 class="hero-title">Felicia, Te Iubesc</h1>
+            <p class="hero-subtitle">Fiecare moment cu tine e o amintire prețioasă</p>
+            <div class="hero-date">Împreună din 19 Noiembrie 2025</div>
+            <a href="#counter" class="scroll-down">
+                <span>Descoperă</span>
+                <div class="scroll-arrow">↓</div>
+            </a>
+        </div>
+        <div class="hero-petals" id="hero-petals"></div>
+    </section>
+
+    <!-- LIVE COUNTER Section -->
+    <section class="section counter-section" id="counter">
+        <div class="container">
+            <h2 class="section-title">De Când Ești a Mea</h2>
+            <p class="section-subtitle">19 Noiembrie 2025 — ziua în care viața mea a căpătat sens</p>
+            
+            <div class="counter-wrapper">
+                <div class="counter-box" data-aos="zoom-in">
+                    <div class="counter-number" id="counter-days">0</div>
+                    <div class="counter-label">Zile</div>
+                </div>
+                <div class="counter-separator">:</div>
+                <div class="counter-box" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="counter-number" id="counter-hours">0</div>
+                    <div class="counter-label">Ore</div>
+                </div>
+                <div class="counter-separator">:</div>
+                <div class="counter-box" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="counter-number" id="counter-minutes">0</div>
+                    <div class="counter-label">Minute</div>
+                </div>
+                <div class="counter-separator">:</div>
+                <div class="counter-box" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="counter-number" id="counter-seconds">0</div>
+                    <div class="counter-label">Secunde</div>
+                </div>
+            </div>
+
+            <div class="counter-heartbeats" data-aos="fade-up">
+                <div class="heartbeat-stat">
+                    <span class="stat-number" id="stat-heartbeats">0</span>
+                    <span class="stat-label">bătăi de inimă pentru tine</span>
+                </div>
+            </div>
+
+            <div class="love-milestones" data-aos="fade-up">
+                <h3 class="milestones-title">Milestone-uri de Iubire</h3>
+                <div class="milestones-grid">
+                    <div class="milestone-item achieved">
+                        <div class="milestone-icon">💕</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Prima zi împreună</span>
+                            <span class="milestone-date">19 Nov 2025</span>
+                        </div>
+                        <div class="milestone-check">✓</div>
+                    </div>
+                    <div class="milestone-item achieved">
+                        <div class="milestone-icon">🌙</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Prima săptămână</span>
+                            <span class="milestone-date">26 Nov 2025</span>
+                        </div>
+                        <div class="milestone-check">✓</div>
+                    </div>
+                    <div class="milestone-item achieved">
+                        <div class="milestone-icon">🌟</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Prima lună</span>
+                            <span class="milestone-date">19 Dec 2025</span>
+                        </div>
+                        <div class="milestone-check">✓</div>
+                    </div>
+                    <div class="milestone-item achieved">
+                        <div class="milestone-icon">🎄</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Primul Crăciun</span>
+                            <span class="milestone-date">25 Dec 2025</span>
+                        </div>
+                        <div class="milestone-check">✓</div>
+                    </div>
+                    <div class="milestone-item achieved">
+                        <div class="milestone-icon">🎆</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Primul Revelion</span>
+                            <span class="milestone-date">1 Ian 2026</span>
+                        </div>
+                        <div class="milestone-check">✓</div>
+                    </div>
+                    <div class="milestone-item achieved">
+                        <div class="milestone-icon">💝</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Prima Zi de Valentine</span>
+                            <span class="milestone-date">14 Feb 2026</span>
+                        </div>
+                        <div class="milestone-check">✓</div>
+                    </div>
+                    <div class="milestone-item achieved">
+                        <div class="milestone-icon">🌸</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Primul 8 Martie</span>
+                            <span class="milestone-date">8 Mar 2026</span>
+                        </div>
+                        <div class="milestone-check">✓</div>
+                    </div>
+                    <div class="milestone-item" id="milestone-6months">
+                        <div class="milestone-icon">🏆</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">6 Luni Împreună</span>
+                            <span class="milestone-date">19 Mai 2026</span>
+                        </div>
+                        <div class="milestone-check">⏳</div>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-icon">🎂</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">1 An de Iubire</span>
+                            <span class="milestone-date">19 Nov 2026</span>
+                        </div>
+                        <div class="milestone-check">⏳</div>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-icon">♾️</div>
+                        <div class="milestone-info">
+                            <span class="milestone-name">Pentru Totdeauna</span>
+                            <span class="milestone-date">∞</span>
+                        </div>
+                        <div class="milestone-check">❤️</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section timeline-section" id="timeline">
+        <div class="container">
+            <h2 class="section-title">Povestea Noastră</h2>
+            <p class="section-subtitle">Fiecare capitol al poveștii noastre e special</p>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Ziua în care ne-am cunoscut</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-img">
+                            <img src="media/prima-intalnire.jpg" alt="Prima întâlnire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="placeholder-img" style="display:none;">📸 Adaugă: media/prima-intalnire.jpg</div>
+                        </div>
+                        <h3>Prima Întâlnire</h3>
+                        <p>Momentul în care te-am văzut prima dată, inima mea a știut că ești cea pe care o căutam. Zâmbetul tău a luminat totul.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Prima noastră ieșire</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-img">
+                            <img src="media/prima-iesire.jpg" alt="Prima ieșire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="placeholder-img" style="display:none;">📸 Adaugă: media/prima-iesire.jpg</div>
+                        </div>
+                        <h3>Prima Ieșire Împreună</h3>
+                        <p>Am râs, am vorbit ore în șir, și am simțit că te cunosc de o viață. A fost magic.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">19 Noiembrie 2025</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-img">
+                            <img src="media/cuplu-oficial.jpg" alt="Am devenit cuplu" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="placeholder-img" style="display:none;">📸 Adaugă: media/cuplu-oficial.jpg</div>
+                        </div>
+                        <h3>Am Devenit Oficiali</h3>
+                        <p>Cea mai frumoasă zi — ziua în care ai spus "da" și am devenit noi. Împreună.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">O amintire specială</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-img">
+                            <img src="media/amintire-speciala.jpg" alt="Amintire specială" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="placeholder-img" style="display:none;">📸 Adaugă: media/amintire-speciala.jpg</div>
+                        </div>
+                        <h3>Momentul Nostru Preferat</h3>
+                        <p>Adaugă aici o amintire frumoasă pe care o aveți împreună — o vacanță, o surpriză, un moment de tandrețe.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Primul Crăciun</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-img">
+                            <img src="media/craciun.jpg" alt="Crăciunul nostru" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="placeholder-img" style="display:none;">📸 Adaugă: media/craciun.jpg</div>
+                        </div>
+                        <h3>Primul Crăciun Împreună 🎄</h3>
+                        <p>Primul Crăciun lângă tine a fost cel mai frumos cadou. Tu ești tot ce mi-am dorit.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Azi și mereu</div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-img">
+                            <img src="media/recenta.jpg" alt="Recent" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="placeholder-img" style="display:none;">📸 Adaugă: media/recenta.jpg</div>
+                        </div>
+                        <h3>Continuarea Poveștii...</h3>
+                        <p>Fiecare zi cu tine adaugă un capitol nou, mai frumos decât precedentul. Povestea noastră abia începe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Momentele Noastre</h2>
+            <p class="section-subtitle">Fiecare poză spune o poveste de dragoste</p>
+            
+            <!-- Gallery Filters -->
+            <div class="gallery-filters" data-aos="fade-up">
+                <button class="gallery-filter active" data-filter="all">Toate</button>
+                <button class="gallery-filter" data-filter="selfie">Selfie-uri</button>
+                <button class="gallery-filter" data-filter="date">Întâlniri</button>
+                <button class="gallery-filter" data-filter="special">Momente Speciale</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="selfie" data-aos="zoom-in">
+                    <img src="media/galerie-1.jpg" alt="Noi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-1.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Prima poză împreună</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-tall" data-category="date" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="media/galerie-2.jpg" alt="Împreună" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-2.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Împreună</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="selfie" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="media/galerie-3.jpg" alt="Zâmbete" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-3.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Zâmbetele noastre</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-wide" data-category="special" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="media/galerie-4.jpg" alt="Moment Special" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-4.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Moment special</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="date" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="media/galerie-5.jpg" alt="Ieșire" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-5.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Ieșirea noastră</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="selfie" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="media/galerie-6.jpg" alt="Selfie" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-6.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Selfie de cuplu</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-tall" data-category="special" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="media/galerie-7.jpg" alt="Special" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-7.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Tu ești minunată</span>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="date" data-aos="zoom-in" data-aos-delay="700">
+                    <img src="media/galerie-8.jpg" alt="Dată" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-8.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Mereu lângă tine</span>
+                    </div>
+                </div>
+                <div class="gallery-item gallery-item-wide" data-category="special" data-aos="zoom-in" data-aos-delay="800">
+                    <img src="media/galerie-9.jpg" alt="Noi doi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-img gallery-placeholder" style="display:none;">📸<br>galerie-9.jpg</div>
+                    <div class="gallery-overlay">
+                        <span>❤️ Pentru totdeauna</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Polaroid Wall Section -->
+    <section class="section polaroid-section" id="polaroids">
+        <div class="container">
+            <h2 class="section-title">Peretele Nostru de Amintiri</h2>
+            <p class="section-subtitle">Poze ca pe un perete plin de dragoste 📌</p>
+            
+            <div class="polaroid-wall">
+                <div class="polaroid" style="--rotation: -5deg; --delay: 0s;" data-aos="fade-up">
+                    <div class="polaroid-img">
+                        <img src="media/polaroid-1.jpg" alt="" onerror="this.src=''; this.parentElement.innerHTML='📸';">
+                    </div>
+                    <div class="polaroid-caption">Prima noastră poză ❤️</div>
+                    <div class="polaroid-pin">📌</div>
+                </div>
+                <div class="polaroid" style="--rotation: 3deg; --delay: 0.1s;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="polaroid-img">
+                        <img src="media/polaroid-2.jpg" alt="" onerror="this.src=''; this.parentElement.innerHTML='📸';">
+                    </div>
+                    <div class="polaroid-caption">Cea mai drăguță 🥰</div>
+                    <div class="polaroid-pin">📌</div>
+                </div>
+                <div class="polaroid" style="--rotation: -2deg; --delay: 0.2s;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="polaroid-img">
+                        <img src="media/polaroid-3.jpg" alt="" onerror="this.src=''; this.parentElement.innerHTML='📸';">
+                    </div>
+                    <div class="polaroid-caption">Zâmbetul tău 😍</div>
+                    <div class="polaroid-pin">📌</div>
+                </div>
+                <div class="polaroid" style="--rotation: 6deg; --delay: 0.3s;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="polaroid-img">
+                        <img src="media/polaroid-4.jpg" alt="" onerror="this.src=''; this.parentElement.innerHTML='📸';">
+                    </div>
+                    <div class="polaroid-caption">Noi doi 💕</div>
+                    <div class="polaroid-pin">📌</div>
+                </div>
+                <div class="polaroid" style="--rotation: -4deg; --delay: 0.4s;" data-aos="fade-up" data-aos-delay="400">
+                    <div class="polaroid-img">
+                        <img src="media/polaroid-5.jpg" alt="" onerror="this.src=''; this.parentElement.innerHTML='📸';">
+                    </div>
+                    <div class="polaroid-caption">Moment magic ✨</div>
+                    <div class="polaroid-pin">📌</div>
+                </div>
+                <div class="polaroid" style="--rotation: 2deg; --delay: 0.5s;" data-aos="fade-up" data-aos-delay="500">
+                    <div class="polaroid-img">
+                        <img src="media/polaroid-6.jpg" alt="" onerror="this.src=''; this.parentElement.innerHTML='📸';">
+                    </div>
+                    <div class="polaroid-caption">Te iubesc! 💝</div>
+                    <div class="polaroid-pin">📌</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Dedication Section -->
+    <section class="section video-section" id="video">
+        <div class="container">
+            <h2 class="section-title light">Un Video Doar Pentru Tine</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Apasă play și privește-ne ❤️</p>
+            
+            <div class="video-player-wrapper" data-aos="fade-up">
+                <div class="video-frame">
+                    <div class="video-hearts-deco">
+                        <span>❤️</span><span>💕</span><span>❤️</span>
+                    </div>
+                    <video class="couple-video" controls poster="media/video-poster.jpg" id="couple-video">
+                        <!-- Adaugă videoclipul: -->
+                        <source src="media/noi.mp4" type="video/mp4">
+                        <source src="media/noi.webm" type="video/webm">
+                        Browserul tău nu suportă video.
+                    </video>
+                    <div class="video-no-file" id="video-no-file">
+                        <span class="vnf-icon">🎬</span>
+                        <p>Adaugă un video cu voi în:</p>
+                        <code>media/noi.mp4</code>
+                    </div>
+                </div>
+                <div class="video-message" data-aos="fade-up" data-aos-delay="200">
+                    <p class="video-quote">„Fiecare secundă cu tine merită să fie filmată, dar nicio cameră nu poate surprinde cât de mult te iubesc."</p>
+                </div>
+            </div>
+
+            <!-- Before / After Photo Slider -->
+            <div class="before-after-wrapper" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="ba-title">Prima Zi vs. Azi</h3>
+                <p class="ba-subtitle">Trage slider-ul pentru a vedea cum a crescut iubirea noastră</p>
+                
+                <div class="ba-slider" id="ba-slider">
+                    <div class="ba-image ba-before">
+                        <img src="media/inainte.jpg" alt="Prima zi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder-img" style="display:none; background: linear-gradient(135deg, #f8bbd0, #fce4ec);">📸 Prima zi<br>media/inainte.jpg</div>
+                        <span class="ba-label">Prima zi ❤️</span>
+                    </div>
+                    <div class="ba-image ba-after">
+                        <img src="media/acum.jpg" alt="Acum" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder-img" style="display:none; background: linear-gradient(135deg, #e91e63, #c2185b); color: white;">📸 Acum<br>media/acum.jpg</div>
+                        <span class="ba-label">Acum 💕</span>
+                    </div>
+                    <div class="ba-handle" id="ba-handle">
+                        <div class="ba-handle-line"></div>
+                        <div class="ba-handle-circle">↔</div>
+                        <div class="ba-handle-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Section -->
+    <section class="section reasons-section" id="reasons">
+        <div class="container">
+            <h2 class="section-title">De Ce Te Iubesc</h2>
+            <p class="section-subtitle">Sunt atâtea motive... dar iată câteva</p>
+            
+            <div class="reasons-grid">
+                <div class="reason-card" data-aos="fade-up">
+                    <div class="reason-number">1</div>
+                    <div class="reason-icon">💫</div>
+                    <h3>Zâmbetul Tău</h3>
+                    <p>Zâmbetul tău îmi luminează cele mai întunecate zile. Când zâmbești, lumea devine un loc mai frumos.</p>
+                </div>
+                <div class="reason-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="reason-number">2</div>
+                    <div class="reason-icon">🌟</div>
+                    <h3>Sufletul Tău Frumos</h3>
+                    <p>Ești cea mai bună persoană pe care o cunosc. Bunătatea ta mă face să vreau să fiu mai bun.</p>
+                </div>
+                <div class="reason-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="reason-number">3</div>
+                    <div class="reason-icon">🦋</div>
+                    <h3>Cum Mă Faci Să Mă Simt</h3>
+                    <p>Lângă tine mă simt acasă. Ești liniștea mea, bucuria mea, totul.</p>
+                </div>
+                <div class="reason-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="reason-number">4</div>
+                    <div class="reason-icon">🌹</div>
+                    <h3>Râsul Tău</h3>
+                    <p>Sunetul râsului tău e melodia mea preferată. Aș face orice să te aud râzând.</p>
+                </div>
+                <div class="reason-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="reason-number">5</div>
+                    <div class="reason-icon">✨</div>
+                    <h3>Puterea Ta</h3>
+                    <p>Ești cea mai puternică femeie pe care o știu. Mă inspiri în fiecare zi.</p>
+                </div>
+                <div class="reason-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="reason-number">6</div>
+                    <div class="reason-icon">💝</div>
+                    <h3>Pur și Simplu Tu</h3>
+                    <p>Nu am nevoie de un motiv. Te iubesc pentru că ești tu — exact așa cum ești, perfectă.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section class="section letter-section" id="letter">
+        <div class="container">
+            <div class="letter-wrapper" data-aos="fade-up">
+                <div class="letter-stamp">❤️</div>
+                <div class="letter-content">
+                    <h2>Scrisoare Pentru Tine</h2>
+                    <div class="letter-line"></div>
+                    
+                    <p>Dragă Felicia,</p>
+                    
+                    <p>Știu că nu am fost mereu perfect. Știu că am greșit și că uneori te-am rănit fără să vreau. Dar vreau să știi că fiecare moment petrecut cu tine a fost cel mai frumos dar pe care viața mi l-a oferit.</p>
+                    
+                    <p>Tu ești prima persoană la care mă gândesc dimineața și ultima la care mă gândesc seara. Ești în fiecare vis al meu, în fiecare plan de viitor, în fiecare bătaie a inimii mele.</p>
+                    
+                    <p>Îmi pare rău pentru momentele în care nu ți-am arătat cât de mult însemni pentru mine. Îmi pare rău că uneori am luat de bun cel mai prețios lucru din viața mea — dragostea ta.</p>
+                    
+                    <p>Vreau să lupți pentru noi așa cum lupt și eu. Vreau să construim amintiri noi, să râdem împreună, să visăm împreună. Vreau să fiu omul care te face fericită în fiecare zi.</p>
+                    
+                    <p>Te iubesc mai mult decât pot spune cuvintele. Te iubesc cu tot ce am și tot ce sunt.</p>
+                    
+                    <p class="letter-signature">Cu toată dragostea,<br>Al tău pentru totdeauna ❤️</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secret Love Notes Section -->
+    <section class="section secrets-section" id="secrets">
+        <div class="container">
+            <h2 class="section-title">Secrete de Dragoste</h2>
+            <p class="section-subtitle">Apasă pe fiecare plic pentru a descoperi un mesaj ascuns 💌</p>
+            
+            <div class="secrets-grid">
+                <div class="secret-envelope" data-aos="fade-up" data-aos-delay="0">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-heart">💌</div>
+                        <p class="envelope-label">Secret #1</p>
+                    </div>
+                    <div class="secret-message">
+                        <p>Prima dată când te-am văzut, inima mea a bătut atât de tare încât am crezut că o aud toți. De atunci, bate doar pentru tine. 💕</p>
+                    </div>
+                </div>
+
+                <div class="secret-envelope" data-aos="fade-up" data-aos-delay="100">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-heart">💌</div>
+                        <p class="envelope-label">Secret #2</p>
+                    </div>
+                    <div class="secret-message">
+                        <p>Uneori, noaptea, mă uit la poze cu tine și zâmbesc ca un prost. Ești cea mai frumoasă fată din univers. 🌙</p>
+                    </div>
+                </div>
+
+                <div class="secret-envelope" data-aos="fade-up" data-aos-delay="200">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-heart">💌</div>
+                        <p class="envelope-label">Secret #3</p>
+                    </div>
+                    <div class="secret-message">
+                        <p>Cel mai mare vis al meu nu e să fiu bogat sau faimos. E să mă trezesc în fiecare dimineață cu tine lângă mine. Asta e tot ce vreau. ☀️</p>
+                    </div>
+                </div>
+
+                <div class="secret-envelope" data-aos="fade-up" data-aos-delay="300">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-heart">💌</div>
+                        <p class="envelope-label">Secret #4</p>
+                    </div>
+                    <div class="secret-message">
+                        <p>Când te superi pe mine, tot ce vreau e să te iau în brațe și să nu te mai las niciodată. Ești cea mai drăguță chiar și când ești nervoasă. 🥺</p>
+                    </div>
+                </div>
+
+                <div class="secret-envelope" data-aos="fade-up" data-aos-delay="400">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-heart">💌</div>
+                        <p class="envelope-label">Secret #5</p>
+                    </div>
+                    <div class="secret-message">
+                        <p>Am un jurnal secret unde scriu cele mai frumoase momente cu tine. Fiecare pagină începe cu „Astăzi, Felicia m-a făcut cel mai fericit om..." ✍️</p>
+                    </div>
+                </div>
+
+                <div class="secret-envelope" data-aos="fade-up" data-aos-delay="500">
+                    <div class="envelope-front">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-heart">💌</div>
+                        <p class="envelope-label">Secret #6</p>
+                    </div>
+                    <div class="secret-message">
+                        <p>Dacă cineva m-ar întreba care e cel mai bun lucru care mi s-a întâmplat vreodată, nu aș ezita nici o secundă: tu. Mereu tu. ❤️‍🔥</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Poem Section -->
+    <section class="section poem-section" id="poem">
+        <div class="container">
+            <div class="poem-wrapper" data-aos="fade-up">
+                <div class="poem-decoration top-left">✦</div>
+                <div class="poem-decoration top-right">✦</div>
+                <div class="poem-decoration bottom-left">✦</div>
+                <div class="poem-decoration bottom-right">✦</div>
+                
+                <h2 class="poem-title">O Poezie Pentru Tine</h2>
+                <div class="poem-quill">🪶</div>
+                
+                <div class="poem-lines" id="poem-lines">
+                    <p class="poem-line" data-delay="0">Am căutat prin stele un răspuns,</p>
+                    <p class="poem-line" data-delay="300">de ce mă simt cu tine ca acasă,</p>
+                    <p class="poem-line" data-delay="600">de ce când ești cu mine, totul e nespus</p>
+                    <p class="poem-line" data-delay="900">și inima mea bate luminoasă.</p>
+                    <p class="poem-line poem-break" data-delay="1400"></p>
+                    <p class="poem-line" data-delay="1700">Ești floarea care crește în pustiu,</p>
+                    <p class="poem-line" data-delay="2000">ești luna care-mi luminează noaptea,</p>
+                    <p class="poem-line" data-delay="2300">ești singurul motiv pentru care știu</p>
+                    <p class="poem-line" data-delay="2600">că merită să lupți pentru toată viața.</p>
+                    <p class="poem-line poem-break" data-delay="3100"></p>
+                    <p class="poem-line" data-delay="3400">Felicia, tu ești poezia mea,</p>
+                    <p class="poem-line" data-delay="3700">scrisă nu cu cerneală, ci cu sufletul,</p>
+                    <p class="poem-line" data-delay="4000">tu ești povestea care n-are capăt nea,</p>
+                    <p class="poem-line" data-delay="4300">tu ești și vei fi mereu totul.</p>
+                </div>
+                
+                <div class="poem-signature">— cu dragoste, al tău Alex ♥</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Song Dedication Section -->
+    <section class="section song-section" id="song">
+        <div class="container">
+            <h2 class="section-title light">Melodia Noastră</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Fiecare poveste de dragoste are o melodie</p>
+            
+            <div class="song-player" data-aos="fade-up">
+                <div class="vinyl-record" id="vinyl-record">
+                    <div class="vinyl-outer">
+                        <div class="vinyl-groove"></div>
+                        <div class="vinyl-groove g2"></div>
+                        <div class="vinyl-groove g3"></div>
+                        <div class="vinyl-label">
+                            <span class="vinyl-heart">♥</span>
+                            <span class="vinyl-names">F & A</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="song-info">
+                    <div class="song-now-playing">
+                        <span class="np-dot"></span>
+                        <span class="np-dot"></span>
+                        <span class="np-dot"></span>
+                        <span>Melodia ta preferată</span>
+                    </div>
+                    <h3 class="song-title">♫ Adaugă melodia voastră aici</h3>
+                    <p class="song-artist">Artistul preferat</p>
+                    
+                    <div class="song-lyrics">
+                        <p class="lyric-line">„Pune aici versurile care vă definesc..."</p>
+                        <p class="lyric-line">„Cuvintele care spun tot ce simți..."</p>
+                        <p class="lyric-line">„Melodia care vă face să vă gândiți unul la celălalt."</p>
+                    </div>
+
+                    <div class="song-bars">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="song-note" data-aos="fade-up">De fiecare dată când aud melodia asta, mă gândesc la tine. ❤️</p>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="section thankyou-section" id="thankyou">
+        <div class="container">
+            <h2 class="section-title">Îți Mulțumesc</h2>
+            <p class="section-subtitle">Pentru tot ce ai adus în viața mea</p>
+            
+            <div class="thankyou-cards">
+                <div class="thankyou-card" data-aos="fade-up">
+                    <div class="thankyou-icon">🙏</div>
+                    <p>Îți mulțumesc că ai avut <strong>răbdare</strong> cu mine, chiar și atunci când nu meritam.</p>
+                </div>
+                <div class="thankyou-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="thankyou-icon">💪</div>
+                    <p>Îți mulțumesc că m-ai făcut un <strong>om mai bun</strong>. Lângă tine am crescut mai mult decât în toată viața.</p>
+                </div>
+                <div class="thankyou-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="thankyou-icon">🏠</div>
+                    <p>Îți mulțumesc că ești <strong>acasă</strong> mea. Nu un loc, ci un sentiment — tu.</p>
+                </div>
+                <div class="thankyou-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="thankyou-icon">🌅</div>
+                    <p>Îți mulțumesc pentru fiecare <strong>dimineață</strong> în care m-am trezit știind că ești a mea.</p>
+                </div>
+                <div class="thankyou-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="thankyou-icon">😢</div>
+                    <p>Îți mulțumesc că mi-ai <strong>șters lacrimile</strong> și că ai avut grijă de mine când nimeni altcineva nu a avut.</p>
+                </div>
+                <div class="thankyou-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="thankyou-icon">⭐</div>
+                    <p>Îți mulțumesc că ai <strong>crezut în mine</strong> chiar și atunci când eu nu credeam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Plans Section -->
+    <section class="section future-section" id="future">
+        <div class="container">
+            <h2 class="section-title light">Viitorul Nostru</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Tot ce visez, visez cu tine lângă mine</p>
+            
+            <div class="future-timeline">
+                <div class="future-path"></div>
+                
+                <div class="future-item" data-aos="fade-right">
+                    <div class="future-icon">🏡</div>
+                    <div class="future-content">
+                        <h3>Casa Noastră</h3>
+                        <p>Vreau să construim un cămin împreună. Un loc doar al nostru, plin de dragoste, unde fiecare colț să aibă o amintire frumoasă. Cu o bucătărie în care să gătim împreună și un balcon unde să privim stelele.</p>
+                    </div>
+                </div>
+
+                <div class="future-item" data-aos="fade-left">
+                    <div class="future-icon">✈️</div>
+                    <div class="future-content">
+                        <h3>Călătorii Împreună</h3>
+                        <p>Vreau să vedem lumea împreună. Să ne pierdem prin străzile Parisului, să admirăm apusul în Santorini, să mergem cu mașina fără destinație... orice loc devine paradis dacă ești tu lângă mine.</p>
+                    </div>
+                </div>
+
+                <div class="future-item" data-aos="fade-right">
+                    <div class="future-icon">💍</div>
+                    <div class="future-content">
+                        <h3>Ziua Cea Mare</h3>
+                        <p>Îmi imaginez ziua în care vei merge spre mine în alb, cea mai frumoasă mireasă din lume. Ziua în care voi spune "Da, te vreau pentru totdeauna" în fața tuturor. Va fi cea mai frumoasă zi din viața mea.</p>
+                    </div>
+                </div>
+
+                <div class="future-item" data-aos="fade-left">
+                    <div class="future-icon">👨‍👩‍👧‍👦</div>
+                    <div class="future-content">
+                        <h3>Familia Noastră</h3>
+                        <p>Vreau să avem copii care să aibă ochii tăi frumoși și zâmbetul tău. Să-i învățăm ce înseamnă dragostea, să le citim povești și să creștem împreună ca familie. Tu vei fi cea mai bună mamă din lume.</p>
+                    </div>
+                </div>
+
+                <div class="future-item" data-aos="fade-right">
+                    <div class="future-icon">👴👵</div>
+                    <div class="future-content">
+                        <h3>Îmbătrânim Împreună</h3>
+                        <p>Vreau să fim acei bătrânei care încă se țin de mână. Să stăm pe verandă, să ne amintim de toate aventurile noastre și să ne iubim la fel de tare ca în prima zi. Ba chiar mai mult.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bucket List Section -->
+    <section class="section bucketlist-section" id="bucketlist">
+        <div class="container">
+            <h2 class="section-title">Obiectivele Noastre</h2>
+            <p class="section-subtitle">Lista de visuri pe care vreau să le bifăm împreună</p>
+            
+            <div class="bucketlist-grid">
+                <div class="bucket-item" data-aos="zoom-in">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să vedem un răsărit de soare pe plajă împreună</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Prima noastră vacanță doar noi doi</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să gătim o cină romantică acasă</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să dansăm în ploaie</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să mergem la Paris</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să ne facem un album foto doar al nostru</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să avem casa noastră</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>O plimbare lungă sub clar de lună</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să privim stelele în camping</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să plantăm un copac împreună</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să adoptăm un animal de companie</span>
+                </div>
+                <div class="bucket-item" data-aos="zoom-in" data-aos-delay="550">
+                    <div class="bucket-checkbox">☐</div>
+                    <span>Să ne scriem scrisori de mână</span>
+                </div>
+                <div class="bucket-item checked" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="bucket-checkbox">☑</div>
+                    <span>Să te fac pe tine cea mai fericită ❤️</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oath / Vow Section -->
+    <section class="section oath-section" id="oath">
+        <div class="container">
+            <div class="oath-wrapper" data-aos="fade-up">
+                <div class="oath-candles">🕯️</div>
+                <h2 class="oath-title">Jurământul Meu</h2>
+                <div class="oath-divider">— ♥ —</div>
+                
+                <div class="oath-text">
+                    <p class="oath-line" data-aos="fade-up" data-aos-delay="100">
+                        Jur să te aleg pe tine, în fiecare zi, din nou și din nou.
+                    </p>
+                    <p class="oath-line" data-aos="fade-up" data-aos-delay="200">
+                        Jur să fiu brațele în care te refugiezi când lumea e prea grea.
+                    </p>
+                    <p class="oath-line" data-aos="fade-up" data-aos-delay="300">
+                        Jur să-ți șterg fiecare lacrimă și să-ți protejez fiecare zâmbet.
+                    </p>
+                    <p class="oath-line" data-aos="fade-up" data-aos-delay="400">
+                        Jur să nu adorm niciodată supărat pe tine.
+                    </p>
+                    <p class="oath-line" data-aos="fade-up" data-aos-delay="500">
+                        Jur că voi lupta pentru noi chiar și când va fi greu — mai ales atunci.
+                    </p>
+                    <p class="oath-line" data-aos="fade-up" data-aos-delay="600">
+                        Jur să fiu omul care merită dragostea ta, în fiecare zi.
+                    </p>
+                    <p class="oath-line" data-aos="fade-up" data-aos-delay="700">
+                        Jur că ultimul lucru pe care îl voi face pe lumea asta va fi să te iubesc.
+                    </p>
+                </div>
+
+                <div class="oath-seal" data-aos="zoom-in" data-aos-delay="900">
+                    <div class="seal-ring">
+                        <span>♥</span>
+                    </div>
+                    <p>Pecetluit cu inima mea</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Quiz Section -->
+    <section class="section quiz-section" id="quiz">
+        <div class="container">
+            <h2 class="section-title light">Cât de Bine Mă Cunoști?</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Un mic joc de dragoste — doar pentru noi doi 💝</p>
+            
+            <div class="quiz-container" id="quiz-container" data-aos="fade-up">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="quiz-progress-bar"></div>
+                </div>
+                <div class="quiz-question-num" id="quiz-num">Întrebarea 1 / 8</div>
+                <h3 class="quiz-question" id="quiz-question">Ce culoare au ochii mei preferați din lume?</h3>
+                <div class="quiz-options" id="quiz-options">
+                    <!-- Options generated by JS -->
+                </div>
+                <div class="quiz-result" id="quiz-result" style="display:none;">
+                    <div class="quiz-score-circle" id="quiz-score-circle">
+                        <span id="quiz-score-text">0</span>
+                    </div>
+                    <p class="quiz-result-msg" id="quiz-result-msg"></p>
+                    <button class="quiz-restart" id="quiz-restart">Încearcă din nou 💕</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- "What If" Emotional Section -->
+    <section class="section whatif-section" id="whatif">
+        <div class="container">
+            <div class="whatif-content" data-aos="fade-up">
+                <h2 class="section-title">Dacă Aș Putea...</h2>
+                
+                <div class="whatif-list">
+                    <div class="whatif-item" data-aos="fade-up" data-aos-delay="100">
+                        <span class="whatif-if">Dacă aș putea</span> să opresc timpul, l-aș opri în fiecare moment petrecut cu tine.
+                    </div>
+                    <div class="whatif-item" data-aos="fade-up" data-aos-delay="200">
+                        <span class="whatif-if">Dacă aș putea</span> să-ți dau o singură promisiune, ar fi aceasta: nu vei fi niciodată singură.
+                    </div>
+                    <div class="whatif-item" data-aos="fade-up" data-aos-delay="300">
+                        <span class="whatif-if">Dacă aș putea</span> să aleg din nou, te-aș alege pe tine. De o mie de ori. De un milion de ori.
+                    </div>
+                    <div class="whatif-item" data-aos="fade-up" data-aos-delay="400">
+                        <span class="whatif-if">Dacă aș putea</span> să-ți arăt cum te văd eu, ai înțelege de ce nu pot trăi fără tine.
+                    </div>
+                    <div class="whatif-item" data-aos="fade-up" data-aos-delay="500">
+                        <span class="whatif-if">Dacă aș putea</span> să transform dragostea mea în ceva vizibil, ar acoperi universul întreg.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise Section -->
+    <section class="section promise-section" id="promise">
+        <div class="container">
+            <div class="promise-content" data-aos="fade-up">
+                <h2 class="section-title light">Promisiunea Mea</h2>
+                <div class="promise-text">
+                    <p>Îți promit să te iubesc în fiecare zi mai mult decât în ziua anterioară.</p>
+                    <p>Îți promit să fiu acolo, mereu.</p>
+                    <p>Îți promit că voi lupta pentru noi, indiferent de ce vine.</p>
+                    <p>Îți promit că vei fi mereu regina inimii mele.</p>
+                </div>
+                <div class="promise-heart">
+                    <span class="big-heart">♥</span>
+                    <p>Felicia & Alex</p>
+                    <p class="forever">Pentru totdeauna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fireworks Final Section -->
+    <section class="section fireworks-section" id="fireworks-section">
+        <canvas id="fireworks-canvas"></canvas>
+        <div class="fireworks-content">
+            <h2 class="fireworks-title" data-aos="zoom-in">Te Iubesc, Felicia</h2>
+            <p class="fireworks-subtitle" data-aos="fade-up" data-aos-delay="300">Apasă oriunde pentru artificii 🎆</p>
+        </div>
+    </section>
+
+    <!-- Final Emotional Message -->
+    <section class="section final-section" id="final">
+        <div class="container">
+            <div class="final-message" data-aos="fade-up">
+                <div class="final-quote">"</div>
+                <p class="final-text">
+                    Felicia, dacă citești asta, vreau să știi un singur lucru:<br><br>
+                    <strong>Nu am nevoie de o lume perfectă. Am nevoie doar de tine.</strong><br><br>
+                    Ești cea mai frumoasă întâmplare din viața mea. Fiecare zi fără tine e incompletă. 
+                    Fiecare zi cu tine e un dar. Nu sunt perfect, dar dragostea mea pentru tine este. 
+                    Și dacă ar fi să trăiesc o mie de vieți, în fiecare te-aș căuta, te-aș găsi 
+                    și te-aș iubi exact la fel de mult.<br><br>
+                    <em>Tu ești povestea mea preferată. Și vreau să aibă cel mai frumos final — împreună.</em>
+                </p>
+                <div class="final-hearts">❤️ ❤️ ❤️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Făcut cu ❤️ pentru cea mai frumoasă fată din lume</p>
+        <p class="footer-small">Felicia, ești totul pentru mine</p>
+    </footer>
+
+    <!-- Lightbox for Gallery -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <img src="" alt="" class="lightbox-img" id="lightbox-img">
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" title="Înapoi sus">
+        <span class="btt-heart">♥</span>
+        <span class="btt-arrow">↑</span>
+    </button>
+
+    <!-- Floating Music Button -->
+    <button class="music-toggle" id="music-toggle" title="Muzică ambientală">
+        <span class="music-icon">♫</span>
+        <div class="music-waves" id="music-waves">
+            <span></span><span></span><span></span>
+        </div>
+    </button>
+
+    </div><!-- end .main-website -->
+
+    <script src="intro.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
